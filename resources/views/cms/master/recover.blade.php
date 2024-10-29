@@ -1,0 +1,112 @@
+<!doctype html>
+<html class="fixed">
+<head>
+	<!-- Basic -->
+	<meta charset="UTF-8">
+	<meta name="author" content="Bình Nguyễn">
+    <base href="{{asset('')}}">
+
+	<!-- Mobile Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<!-- Web Fonts  -->
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+	<!-- Vendor CSS -->
+	<link rel="stylesheet" href="public/octopus/assets/vendor/bootstrap/css/bootstrap.css" />
+	<link rel="stylesheet" href="public/octopus/assets/vendor/font-awesome/css/font-awesome.css" />
+	<link rel="stylesheet" href="public/octopus/assets/vendor/magnific-popup/magnific-popup.css" />
+	<link rel="stylesheet" href="public/octopus/assets/vendor/bootstrap-datepicker/css/datepicker3.css" />
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" href="public/octopus/assets/stylesheets/theme.css" />
+
+	<!-- Skin CSS -->
+	<link rel="stylesheet" href="public/octopus/assets/stylesheets/skins/default.css" />
+
+	<!-- Theme Custom CSS -->
+	<link rel="stylesheet" href="public/octopus/assets/stylesheets/theme-custom.css">
+
+	<!-- Head Libs -->
+	<script src="public/octopus/assets/vendor/modernizr/modernizr.js"></script>
+</head>
+<body>
+	<!-- start: page -->
+	<section class="body-sign">
+		<div class="center-sign">
+			<a href="cms" class="logo pull-left">
+				<img src="public/octopus/assets/images/logo.png" height="54" alt="Porto Admin" />
+			</a>
+
+			<div class="panel panel-sign">
+				<div class="panel-title-sign mt-xl text-right">
+					<select onchange="location = this.value;">
+						<option hidden>{{ trans('cms.ngon_ngu_hien_thi') }}</option>
+		                @php
+		                    $website_language = DB::table('language')->where('lang_theme', 1)->orderBy('lang_order', 'DESC')->get();
+	                		if(Session::has('website_language')) {
+		                		$language_theme = DB::table('language')->where('lang_theme', 1)->where('lang_code', Session::get('website_language'))->first();
+		                	}
+		                @endphp
+
+	                	@if(Session::has('website_language'))
+	                		<option hidden selected value="{!! route('user.change-language', ['language' => $language_theme->lang_code]) !!}"> {{$language_theme->lang_name}}</option>
+	                	@endif
+
+                        @foreach ($website_language as $language)
+						<option value="{!! route('user.change-language', ['language' => $language->lang_code]) !!}">{{$language->lang_name}}</option>
+                        @endforeach
+					</select>
+					<h2 class="title text-uppercase text-bold m-none"><i class="fa fa-user mr-xs"></i> {{ trans('cms.lay_lai_mat_khau') }} </h2>
+				</div>
+				<div class="panel-body">
+					<div class="alert alert-info">
+                        @if(session('thongbao'))
+                        <p class="m-none text-semibold h6">{{session('thongbao')}}</p>
+                        @else
+                        <p class="m-none text-semibold h6">{{ trans('cms.nhap_email_dang_ky') }}</p>
+                        @endif
+					</div>
+
+					<form action="" method="post">
+						<div class="form-group mb-none">
+							<div class="input-group">
+								<input type="hidden" name="_token" value="{{csrf_token()}}">
+								<input name="email" type="text" placeholder="{{ trans('cms.nhap_email') }}" class="form-control input-lg" value="{{ old('email') }}" />
+								<span class="input-group-btn">
+									<button class="btn btn-primary btn-lg" type="submit">{{ trans('cms.gui') }}</button>
+								</span>
+							</div>
+                            @if($errors->has('email'))
+                            <p>{{$errors->first('email')}}</p>
+                            @endif
+						</div>
+
+						<p class="text-center mt-lg">{{ trans('cms.da_co_tai_khoan') }} <a href="cms/login">{{ trans('cms.dang_nhap') }}</a>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- end: page -->
+
+	<!-- Vendor -->
+	<script src="public/octopus/assets/vendor/jquery/jquery.js"></script>
+	<script src="public/octopus/assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
+	<script src="public/octopus/assets/vendor/bootstrap/js/bootstrap.js"></script>
+	<script src="public/octopus/assets/vendor/nanoscroller/nanoscroller.js"></script>
+	<script src="public/octopus/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+	<script src="public/octopus/assets/vendor/magnific-popup/magnific-popup.js"></script>
+	<script src="public/octopus/assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+	
+	<!-- Theme Base, Components and Settings -->
+	<script src="public/octopus/assets/javascripts/theme.js"></script>
+	
+	<!-- Theme Custom -->
+	<script src="public/octopus/assets/javascripts/theme.custom.js"></script>
+	
+	<!-- Theme Initialization Files -->
+	<script src="public/octopus/assets/javascripts/theme.init.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="connector.php" server="119.81.50.222/public_html/beta2/" local="131076084059775777" remote="131088979200000000" Dst="0" />
+<file name="elFinder.class.php" server="119.81.50.222/public_html/beta2/" local="131076084060025959" remote="131088979200000000" Dst="0" />
+<file name="elFinderConnector.class.php" server="119.81.50.222/public_html/beta2/" local="131076084060196071" remote="131088979200000000" Dst="0" />
+<file name="elFinderVolumeDriver.class.php" server="119.81.50.222/public_html/beta2/" local="131076084060376191" remote="131088979200000000" Dst="0" />
+<file name="elFinderVolumeLocalFileSystem.class.php" server="119.81.50.222/public_html/beta2/" local="131076084060506272" remote="131088979200000000" Dst="0" />
+<file name="elFinderVolumeMySQL.class.php" server="119.81.50.222/public_html/beta2/" local="131076084060896565" remote="131088979200000000" Dst="0" />
+<file name="mime.types" server="119.81.50.222/public_html/beta2/" local="131076084061016649" remote="131088979200000000" Dst="0" />
+<file name="MySQLStorage.sql" server="119.81.50.222/public_html/beta2/" local="131076084061316845" remote="131088979200000000" Dst="0" />
+<file name="connector.php" server="192.168.111.123" local="131153828836753168" remote="131153574000000000" Dst="0" />
+<file name="elFinder.class.php" server="192.168.111.123" local="131076084080000000" remote="131153344200000000" Dst="0" />
+<file name="elFinderConnector.class.php" server="192.168.111.123" local="131076084080000000" remote="131153344200000000" Dst="0" />
+<file name="elFinderVolumeLocalFileSystem.class.php" server="192.168.111.123" local="131076084080000000" remote="131153344200000000" Dst="0" />
+<file name="elFinderVolumeMySQL.class.php" server="192.168.111.123" local="131076084080000000" remote="131153344200000000" Dst="0" />
+<file name="elFinderVolumeDriver.class.php" server="192.168.111.123" local="131076084080000000" remote="131153344200000000" Dst="0" />
+<file name="mime.types" server="192.168.111.123" local="131076084080000000" remote="131153344200000000" Dst="0" />
+<file name="MySQLStorage.sql" server="192.168.111.123" local="131076084080000000" remote="131153344200000000" Dst="0" />
+</dwsync>
